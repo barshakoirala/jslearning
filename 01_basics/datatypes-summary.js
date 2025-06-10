@@ -31,3 +31,13 @@ const myFunction = function(){
 
 
 // these are reference type (non primitive datatypes)
+
+
+// stack(used in primitive datatypes )heap(used in reference /non primitive datatypes)
+let myYoutubename ="midnightrain"
+
+let anothername = myYoutubename 
+anothername = "dressesandcode"
+
+console.log(myYoutubename);
+console.log(anothername);
