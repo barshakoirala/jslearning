@@ -41,3 +41,15 @@ anothername = "dressesandcode"
 
 console.log(myYoutubename);
 console.log(anothername);
+
+let userOne ={
+    email: "theojames3@google.com",
+    phonenumber: 76890412
+}
+
+let userTwo = userOne
+
+userTwo.email = "jamestheo6@gmail.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
