@@ -21,5 +21,57 @@
     //console.log ("Hi my name is" +  friends[i]);      // i++ move to next index i = i+ 1
 //}
 
+//friends.forEach(function (name){
+   // console.log(" hi my name is " + name );
+//});
 
 
+//let colors = ["blue", "green", "yellow"];
+// colors.forEach(function(name){                 here we used foreach loop 
+//     console.log("I like color" + name);
+// });
+
+
+//MAP()
+
+//let nums = [1,2,3,4];
+// let doubled = nums.map(function(num){
+//     return num * 2;
+// }); 
+// console.log(doubled);
+
+
+
+// let nums = [1, 2, 3, 4];
+
+// let total = nums.reduce(function(acc, curr) {      //so here what we did is applied reduce() method where acc is 0 and current is all the numbers there )
+//   return acc + curr;    // so if you want to add  (accumulator + currentValue)
+// }, 0);
+
+// console.log(total);   
+
+
+// let numbers = [4, 8, 7, 6, 1, 3];
+
+// let position = numbers.indexOf(6);
+
+// console.log(position); 
+
+
+// let numbers = [4, 8, 7, 6, 1, 3];
+
+// for (let i = 0; i < numbers.length; i++) {
+//   if (numbers[i] === 6) {                            // we used loop here, conition (if/else)
+//     console.log("Found 6 at index", i);
+//     break;                                           // here ,stop the loop after finding
+//   }
+// }
+
+// let num = -3;
+// if (num > 0) {
+//   console.log("Positive number");
+// } else if (num < 0) {
+//   console.log("Negative number");
+// } else {
+//   console.log("Zero");
+// }
