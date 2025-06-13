@@ -75,3 +75,14 @@
 // } else {
 //   console.log("Zero");
 // }
+
+
+// let fruits = ["apple", "banana", "mango"];
+
+// fruits.forEach(function(fruit) {
+//   console.log(fruit);
+// });
+
+
+let marks = [45, 78, 89, 32, 60, 90, 55];
+      
