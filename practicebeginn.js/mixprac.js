@@ -116,8 +116,137 @@
 
 //  12
 
-let marks = 35;
+// let marks = 35;
 
-let result = marks >= 40 ? "pass" : "fail;"
+// let result = marks >= 40 ? "pass" : "fail;"
 
-console.log(result);
+// console.log(result);
+
+// loop and arrays
+
+
+// for (let i = 1; i <= 10; i++){
+//     console.log(i);
+// }
+
+
+
+// .map
+
+// let numbers = [1 ,2, 3];
+
+// let doubled = numbers.map(function(num) {
+//     return num * 2;
+// });
+
+// console.log(doubled);
+
+
+// let salaries = [30000 ,35000, 40000];
+
+// let updateSalaries =  salaries.map(function(salary){
+//     return salary + 1000;
+// });
+
+// console.log(updateSalaries);
+
+
+// let animals = ["dog" ,"horse", "giraffe", "lion"];
+
+// let lengths = animals.map(function(animal){
+//     return animal.length
+// });
+
+// console.log(lengths);
+
+
+// let items = ["pen", "book","eraser"];
+
+// let labeled =  items.map(function(data, index){
+//     return `${index + 1}. ${data}`;
+// });
+
+// console.log(labeled);
+
+
+// let food = ["pizza" ,"momo", "Burger"];
+
+// let result = food.map(function(item){
+//     return item + "is tasty";
+
+// });
+
+// console.log(result);
+
+// let people = [
+//     { name : "barsha", age : 25 },
+//     { name : "rita", age : 26 },
+//     { name : "gita", age : 30 },
+// ];
+
+// let names = people.map(function(person){
+//     return person.name;
+// });
+
+// console.log(names);
+
+
+// const result = array.filter((Element,index) => {
+//     return condition;
+// });
+
+// const numbers = [1,2,3,4,5]
+// const evenNumbers = numbers.filter(num=> num % 2 === 0);
+// console.log(evenNumbers);
+
+// const students = [
+//     {Name: "ram", marks: 40},
+//     {name: "sita", marks: 75},
+//     {name: "hari", marks: 30},
+// ];
+
+// const passed = students.filter(student => student.marks >= 40);
+// console.log(passed);
+
+
+// const names = ["ram","sita","gopal","anjali","raj"];
+// const longNames = names.filter(name => name.length > 4);
+// console.log(longNames);
+
+
+// const products = [
+//     {name: "Shampoo", inStock: true },
+//     {name: "Soap", inStock: false},
+//     {name: "lotion", inStock: true },
+// ];
+
+// const available = products.filter(item => item.inStock);
+// console.log(available);
+
+
+// const prices = [150, 80, 200 ,50, 99];
+// const cheapcPrices = prices.filter(price => price <100);
+// console.log(cheapPrices);
+
+// const students = [
+//     {name: "Asha", marks:35 },
+//     {name: "Binod", marks:60 },
+//     {name: "Chirag", marks: 25 },
+// ];
+
+// const failed = students.filter(s => s.marks < 40 );
+// console.log(failed);
+
+
+// const result = Array.reduce((accululator, currentValue) => {
+//     return something;
+// }, initialValue);
+
+
+const nums = [1,2,3,4,5,6];
+const countEven = nums.reduce((acc, num) => {
+    if (num % 2 === 0) acc++;
+    return acc;
+}, 0);
+
+console.log(countEven);
