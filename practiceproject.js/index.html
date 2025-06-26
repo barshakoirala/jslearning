@@ -1,0 +1,67 @@
+
+<body>
+    <head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+
+  <h1>🛒 My Shopping Cart</h1>
+
+  <div id="cart-items"></div>
+  <h2 id="total-value"></h2>
+
+  <h3>Add New Product</h3>
+  <input type="text" id="name" placeholder="Product Name">
+  <input type="number" id="price" placeholder="Price">
+  <input type="number" id="quantity" placeholder="Quantity">
+  <button onclick="addProduct()">Add Product</button>
+
+  <script>
+    const products = [
+      { name: "Laptop", price: 1200, quantity: 2 },
+      { name: "Keyboard", price: 70, quantity: 1 },
+      { name: "iPhone", price: 800, quantity: 2 },
+      { name: "Speaker", price: 150, quantity: 2 },
+      { name: "Charger", price: 25, quantity: 3 }
+    ];
+
+    function displayCart(cart) {
+      const cartDiv = document.getElementById("cart-items");
+      cartDiv.innerHTML = "";
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        const itemLine = document.createElement("p");
+        itemLine.textContent = `${item.name} - $${item.price} x ${item.quantity} = $${itemTotal}`;
+        cartDiv.appendChild(itemLine);
+      });
+    }
+
+    function getTotal(cart) {
+      const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+      document.getElementById("total-value").textContent = "Total Cart Value: $" + total;
+    }
+
+    function addProduct() {
+      const name = document.getElementById("name").value;
+      const price = parseFloat(document.getElementById("price").value);
+      const quantity = parseInt(document.getElementById("quantity").value);
+
+      if (name && !isNaN(price) && !isNaN(quantity)) {
+        products.push({ name, price, quantity });
+        displayCart(products);
+        getTotal(products);
+        // clear input fields
+        document.getElementById("name").value = "";
+        document.getElementById("price").value = "";
+        document.getElementById("quantity").value = "";
+      } else {
+        alert("Please enter valid name, price, and quantity.");
+      }
+    }
+
+    // Initial display
+    displayCart(products);
+    getTotal(products);
+  </script>
+</body>

@@ -20,43 +20,40 @@
 // creating a list of product
 
 const products = [
-    { name: "laptop", price: 1200 },
-    { name: "Mouse", price: 45},
-    { name: "Keyboard", price: 70},
-    { name: "Iphone", price: 800},
-    { name: "Speaker", price: 150}
+  { name: "Laptop", price: 1200, quantity: 2 },
+  { name: "Keyboard", price: 70, quantity: 1 },
+  { name: "iPhone", price: 800, quantity: 2 },
+  { name: "Speaker", price: 150, quantity: 2 },
+  { name: "Charger", price: 25, quantity: 3 }
+];
 
-]
+function displayCart(cart) {
+  cart.forEach(p => {
+    const itemTotal = p.price * p.quantity;
+    console.log(`${p.name} - $${p.price} x ${p.quantity} = $${itemTotal}`);
+  });
+}
 
-// show all the products name
-const productNames = products.map(p => p.name);
-console.log("All Products:", productNames);
+function getTotal(cart) {
+  const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+  console.log("Total Cart Value: $" + total);
+}
 
+// Show cart and total
+displayCart(products);
+getTotal(products);
 
-// 2. Calculate total cart value
-const totalPrice = products.reduce((acc, p) => acc + p.price, 0);
-console.log("Total Cart Value: $" + totalPrice);
+function updateQuantity(cart, productName, newQuantity) {
+  const item = cart.find(p => p.name.toLowerCase() === productName.toLowerCase());
+  if (item) {
+    item.quantity = newQuantity;
+    console.log(`${item.name} quantity updated to ${newQuantity}`);
+  } else {
+    console.log("Product not found in cart");
+  }
+}
 
-// 3. (Optional) Show products above $100
-const premiumItems = products.filter(p => p.price > 100);
-console.log("Premium Products:", premiumItems.map(p => p.name));
+updateQuantity(products, "Charger", 5);
 
-
-const discountedProducts = products.map(p => {
-  return {
-    name: p.name,
-    originalPrice: p.price,
-    discountedPrice: p.price - p.price * 0.1 // 10% off
-  };
-});
-
-console.log("With Discounts:", discountedProducts);
-
-
-const sortedProducts = products.slice().sort((a, b) => a.price - b.price);
-console.log("Sorted Products (Low to High):", sortedProducts.map(p => p.name + " - $" + p.price));
-
-
-
-
-
+displayCart(products);
+getTotal(products);
